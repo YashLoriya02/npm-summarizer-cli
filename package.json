@@ -1,0 +1,42 @@
+{
+  "name": "summarizer-cli",
+  "version": "1.0.1",
+  "description": "CLI tool to summarize functionsor whole file using LLM",
+  "main": "lib/summarizer.js",
+  "author": "Yash Loriya",
+  "license": "MIT",
+  "readme": "README.md",
+  "bin": {
+    "summarizer": "./bin/cli.js"
+  },
+  "keywords": [
+    "summarizer",
+    "cli",
+    "llm",
+    "code",
+    "dev",
+    "summary",
+    "function"
+  ],
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md",
+    "package.json"
+  ],
+  "type": "module",
+  "scripts": {
+    "start": "node bin/cli.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0",
+    "dotenv": "^16.5.0",
+    "figlet": "^1.8.1",
+    "gradient-string": "^3.0.0",
+    "marked": "^15.0.12",
+    "marked-terminal": "^7.3.0",
+    "ora": "^8.2.0"
+  }
+}
