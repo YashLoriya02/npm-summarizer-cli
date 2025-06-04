@@ -1,8 +1,6 @@
 # 🚀 Summarizer CLI
 
---- 
-
-Instantly summarize code files, functions, or custom prompts using powerful LLMs — right from your terminal. Whether you're reviewing unfamiliar codebases, writing documentation, onboarding new developers, or just need a quick overview of complex logic, Summarizer CLI is your AI-powered assistant. It works with full JavaScript/TypeScript files or extracts specific functions on demand, and can even handle free-form prompt instructions. With beautifully formatted CLI output and optional export to Markdown, text, or JSON files, this tool saves hours of reading and guessing. Simple, blazing fast, and developer-friendly — perfect for individuals, teams, and code reviewers alike.
+#### Instantly summarize code files, functions, or custom prompts using powerful LLMs — right from your terminal. Whether you're reviewing unfamiliar codebases, writing documentation, onboarding new developers, or just need a quick overview of complex logic, Summarizer CLI is your AI-powered assistant. It works with full JavaScript/TypeScript files or extracts specific functions on demand, and can even handle free-form prompt instructions. With beautifully formatted CLI output and optional export to Markdown, text, or JSON files, this tool saves hours of reading and guessing. Simple, blazing fast, and developer-friendly — perfect for individuals, teams, and code reviewers alike.
 ---
 
 ## ✨ Features
