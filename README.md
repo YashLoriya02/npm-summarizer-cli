@@ -85,4 +85,4 @@ summarizer "Summarize OTP validation flow" --save --format json --apikey your_ge
 
 ## 🧠 Output Example (Snapshot)
 
-![CLI Example Snapshot](image-1.png)
+![CLI Example Snapshot](https://github.com/YashLoriya02/npm-summarizer-cli/blob/main/image-1.png)
