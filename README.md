@@ -17,34 +17,34 @@
 ### 🔹 Summarize a Prompt
 
 ```bash
-summarizer "Summarize what the login function in auth.js does"
+summarizer "Summarize what the login function in auth.js does" --apikey your_gemini_key
 ```
 
 ### 🔹 Summarize a Full File
 
 ```bash
-summarizer -f ./utils/auth.js
-summarizer --file ./utils/auth.js
+summarizer -f ./utils/auth.js --apikey your_gemini_key
+summarizer --file ./utils/auth.js --apikey your_gemini_key
 ```
 
 ### 🔹 Summarize a Specific Function
 
 ```bash
-summarizer -f ./src/utils/auth.js -n loginHandler
+summarizer -f ./src/utils/auth.js -n loginHandler --apikey your_gemini_key
 ```
 
 ### 🔹 Save Output to File
 
 ```bash
-summarizer -f ./src/utils/utils.js --save  # (saves in .md by default)
+summarizer -f ./src/utils/utils.js --save --apikey your_gemini_key  # (saves in .md by default)
 ```
 
 ### 🔹 Save in Custom Format
 
 ```bash
-summarizer -f ./src/utils/auth.js --save --format md
-summarizer -f ./src/utils.js --save --format txt
-summarizer "Summarize OTP validation flow" --save --format json
+summarizer -f ./src/utils/auth.js --save --format md --apikey your_gemini_key
+summarizer -f ./src/utils.js --save --format txt --apikey your_gemini_key
+summarizer "Summarize OTP validation flow" --save --format json --apikey your_gemini_key
 ```
 
 > 📁 All saved summaries are stored inside the `./summaries/` folder.
@@ -53,13 +53,14 @@ summarizer "Summarize OTP validation flow" --save --format json
 
 ## 🧾 Options
 
-| Option            | Description                                                    |
-| ----------------- | -------------------------------------------------------------- |
-| `[prompt]`        | Free-form prompt to generate a summary                         |
-| `-f, --file`      | Path to a JavaScript/TypeScript file to summarize              |
-| `-n, --function`  | Name of the function to extract and summarize (requires `-f`)  |
-| `--save`          | If provided, saves the summary to the `./summaries/` directory |
-| `--format <type>` | Output format: `md`, `txt`, or `json` (used with `--save`)     |
+| Option              | Description                                                    |
+| -----------------   | -------------------------------------------------------------- |
+| `[prompt]`          | Free-form prompt to generate a summary                         |
+| `-f, --file`        | Path to a JavaScript/TypeScript file to summarize              |
+| `-n, --function`    | Name of the function to extract and summarize (requires `-f`)  |
+| `--save`            | If provided, saves the summary to the `./summaries/` directory |
+| `--format <type>`   | Output format: `md`, `txt`, or `json` (used with `--save`)     |
+| `--apikey <apikey>` | API key for summary generation using LLM                       |
 
 ---
 
