@@ -1,6 +1,6 @@
 {
   "name": "summarizer-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI tool to summarize functionsor whole file using LLM",
   "main": "lib/summarizer.js",
   "author": "Yash Loriya",
