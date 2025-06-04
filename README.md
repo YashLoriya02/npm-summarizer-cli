@@ -82,3 +82,7 @@ summarizer "Summarize OTP validation flow" --save --format json --apikey your_ge
 • Filters visible conversations
 • Returns JSON response
 ```
+
+## 🧠 Output Example (Snapshot)
+
+![CLI Example Snapshot](image-1.png)
