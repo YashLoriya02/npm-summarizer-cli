@@ -1,15 +1,14 @@
 # 🚀 Summarizer CLI
 
-
-Instantly summarize code files, functions, or custom prompts using powerful LLMs — right from your terminal. Whether you're reviewing unfamiliar codebases, writing documentation, onboarding new developers, or just need a quick overview of complex logic, Summarizer CLI is your AI-powered assistant. It works with full JavaScript/TypeScript files or extracts specific functions on demand, and can even handle free-form prompt instructions. With beautifully formatted CLI output and optional export to Markdown, text, or JSON files, this tool saves hours of reading and guessing. Simple, blazing fast, and developer-friendly — perfect for individuals, teams, and code reviewers alike.
+#### Instantly summarize code files, functions, or custom prompts using powerful LLMs — right from your terminal. Whether you're reviewing unfamiliar codebases, writing documentation, onboarding new developers, or just need a quick overview of complex logic, Summarizer CLI is your AI-powered assistant. It works with full files or extracts specific functions on demand, and can even handle free-form prompt instructions. With beautifully formatted CLI output and optional export to Markdown, txt, or JSON files, this tool saves hours of reading and guessing. Simple, blazing fast, and developer-friendly — perfect for individuals, teams, and code reviewers alike.
 ---
 
 ## ✨ Features
 
-* ✅ Summarize full files
+* ✅ Summarize any functions, text or full files
 * ✅ Extract and summarize specific functions from a file
-* ✅ Beautiful CLI output with syntax highlighting and emojis
-* ✅ Optional export to `.md`, `.txt`, or `.json` in a `./summaries/` folder
+* ✅ Beautiful CLI output with syntax highlighting
+* ✅ Option to export summaries to `.md`, `.txt`, or `.json` in a `./summaries/` folder
 * ✅ LLM-powered, fast and accurate summaries
 
 ---
@@ -38,14 +37,14 @@ summarizer -f ./src/utils/auth.js -n loginHandler
 ### 🔹 Save Output to File
 
 ```bash
-summarizer -f ./src/utils/auth.js --save  # (saves in .md by default)
+summarizer -f ./src/utils/utils.js --save  # (saves in .md by default)
 ```
 
 ### 🔹 Save in Custom Format
 
 ```bash
 summarizer -f ./src/utils/auth.js --save --format md
-summarizer -f ./src/utils/auth.js --save --format txt
+summarizer -f ./src/utils.js --save --format txt
 summarizer "Summarize OTP validation flow" --save --format json
 ```
 
