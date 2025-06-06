@@ -1,6 +1,6 @@
 # 🚀 Summarizer CLI
 
-#### Instantly summarize code files, functions, or custom prompts using powerful LLMs — right from your terminal. Whether you're reviewing unfamiliar codebases, writing documentation, onboarding new developers, or just need a quick overview of complex logic, Summarizer CLI is your AI-powered assistant. It works with full files or extracts specific functions on demand, and can even handle free-form prompt instructions. With beautifully formatted CLI output and optional export to Markdown, txt, or JSON files, this tool saves hours of reading and guessing. Simple, blazing fast, and developer-friendly — perfect for individuals, teams, and code reviewers alike.
+#### Instantly summarize code files, functions, or custom prompts using LLM — right from your terminal. Whether you're reviewing unfamiliar codebases, writing documentation, onboarding new developers, or just need a quick overview of complex logic, Summarizer CLI is your AI-powered assistant. It works with full files or extracts specific functions on demand, and can even handle free-form prompt instructions. With beautifully formatted CLI output and optional export to Markdown, txt, or JSON files, this tool saves hours of reading and guessing. Simple, blazing fast, and developer-friendly — perfect for individuals, teams, and code reviewers alike.
 
 ## ✨ Features
 
@@ -23,14 +23,14 @@ summarizer "Summarize what the login function in auth.js does" --apikey your_gem
 ### 🔹 Summarize a Full File
 
 ```bash
-summarizer -f ./utils/auth.js --apikey your_gemini_key
+summarizer -f ./utils/auth.js [PROMPT] --apikey your_gemini_key
 summarizer --file ./utils/auth.js --apikey your_gemini_key
 ```
 
 ### 🔹 Summarize a Specific Function
 
 ```bash
-summarizer -f ./src/utils/auth.js -n loginHandler --apikey your_gemini_key
+summarizer -f ./src/utils/auth.js -n loginHandler [PROMPT] --apikey your_gemini_key
 ```
 
 ### 🔹 Save Output to File
@@ -42,7 +42,6 @@ summarizer -f ./src/utils/utils.js --save --apikey your_gemini_key  # (saves in 
 ### 🔹 Save in Custom Format
 
 ```bash
-summarizer -f ./src/utils/auth.js --save --format md --apikey your_gemini_key
 summarizer -f ./src/utils.js --save --format txt --apikey your_gemini_key
 summarizer "Summarize OTP validation flow" --save --format json --apikey your_gemini_key
 ```
@@ -56,7 +55,7 @@ summarizer "Summarize OTP validation flow" --save --format json --apikey your_ge
 | Option              | Description                                                    |
 | -----------------   | -------------------------------------------------------------- |
 | `[prompt]`          | Free-form prompt to generate a summary                         |
-| `-f, --file`        | Path to a JavaScript/TypeScript file to summarize              |
+| `-f, --file`        | Path to a file to summarize                                    |
 | `-n, --function`    | Name of the function to extract and summarize (requires `-f`)  |
 | `--save`            | If provided, saves the summary to the `./summaries/` directory |
 | `--format <type>`   | Output format: `md`, `txt`, or `json` (used with `--save`)     |
