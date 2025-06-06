@@ -1,34 +1,21 @@
 #!/usr/bin/env node
 
+import chalk from 'chalk';
 import { Command } from 'commander';
 import dotenv from 'dotenv';
-import ora from 'ora';
-import fs from 'fs';
-import path from 'path';
-import chalk from 'chalk';
 import figlet from 'figlet';
 import gradient from 'gradient-string';
 import { marked } from 'marked';
 import TerminalRenderer from 'marked-terminal';
-import { summarizePrompt, summarizeFile, summarizeFunction } from '../lib/summarizer.js';
+import ora from 'ora';
 import { extractFunctionFromFile } from '../lib/extractor.js';
+import { saveSummary } from '../lib/saveSummary.js';
+import { summarizeFile, summarizeFunction, summarizePrompt } from '../lib/summarizer.js';
+import { applyMarkdownParser } from '../lib/markdownParser.js';
 
 marked.setOptions({
     renderer: new TerminalRenderer(),
 });
-
-const applyMarkdownParser = (rawText) => {
-    return rawText
-        .replace(/`([^`]+)`/g, '$1')
-        .replace(/\*\*(.*?)\*\*/g, chalk.bold.yellow('$1'))
-        .replace(/^\s*\*\*\s*`(.*?)`\s*Function:\*\*/gm, (_, fnName) => {
-            return chalk.bold.yellow(`\n📌 Function: ${fnName}\n`);
-        })
-        // .replace(/^\s*\*+\s?/gm, '• ')
-        .replace(/^\s*\*+\s?/gm, '')
-        .replace(/\n{2,}/g, '\n');
-};
-
 
 dotenv.config();
 
@@ -89,30 +76,6 @@ program
             console.error(chalk.red('Error:'), err.message);
         }
     });
-
-
-function saveSummary(summary, format = 'md') {
-    const cleanFormat = format.toLowerCase();
-    const ext = ['md', 'txt', 'json'].includes(cleanFormat) ? cleanFormat : 'md';
-    const summariesDir = path.join(process.cwd(), 'summaries');
-    const filePath = path.join(summariesDir, `summary.${ext}`);
-
-    let content = summary;
-    if (ext === 'json') {
-        content = JSON.stringify({ summary }, null, 2);
-    }
-
-    try {
-        if (!fs.existsSync(summariesDir)) {
-            fs.mkdirSync(summariesDir, { recursive: true });
-        }
-
-        fs.writeFileSync(filePath, content, 'utf-8');
-        console.log(chalk.green(`✅ Summary saved to ${filePath}`));
-    } catch (error) {
-        console.error(chalk.red(`❌ Failed to save file: ${error.message}`));
-    }
-}
 
 
 program.parse();
