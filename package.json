@@ -1,6 +1,6 @@
 {
   "name": "summarizer-cli",
-  "version": "1.0.7",
+  "version": "1.0.71",
   "description": "CLI tool to summarize functions or whole file using LLM",
   "main": "lib/summarizer.js",
   "author": "Yash Loriya",
@@ -9,6 +9,11 @@
   "bin": {
     "summarizer": "./bin/cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YashLoriya02/npm-summarizer-cli.git"
+  },
+  "homepage": "https://github.com/YashLoriya02/npm-summarizer-cli#readme",
   "keywords": [
     "summarizer",
     "cli",
